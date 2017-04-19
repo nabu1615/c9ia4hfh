@@ -30,6 +30,14 @@
           <%= f.submit @room.new_record? ? "Crear Habitación" : "Editar Habitación", class: "btn btn-primary btn-lg btn-block" %>
         </div>
       <% end %>
+
+      <% if @room.errors %>
+        <div class="errors">
+          <% @room.errors.full_messages.each  do |error| %>
+            <p> <%= error %> </p>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
